@@ -1,4 +1,5 @@
 from automovil import Automovil
+from automovilVolador import AutomovilVolador
 
 # Crear una instancia del automóvil
 mi_auto = Automovil("Rojo", "Toyota", 10, 120)
@@ -31,3 +32,30 @@ auto2.mostrar_detalles()
 # Frenar el segundo automóvil
 auto2.frenar()
 auto2.mostrar_detalles()
+
+# Crear una instancia de AutomovilVolador
+auto_volador = AutomovilVolador("Plateado", "Tesla", 20, 100)
+
+# Mostrar las características iniciales del automóvil volador
+print("Características del automóvil volador:")
+auto_volador.mostrar_detalles()
+
+# Acelerar el automóvil volador
+print("\nAcelerando el automóvil volador...")
+auto_volador.acelerar()
+auto_volador.mostrar_detalles()
+
+# Frenar el automóvil volador
+print("\nFrenando el automóvil volador...")
+auto_volador.frenar()
+auto_volador.mostrar_detalles()
+
+# Aterrizar el automóvil volador
+print("\nAterrizando el automóvil volador...")
+auto_volador.aterriza()
+auto_volador.mostrar_detalles()
+
+# Hacer que el automóvil vuelva a volar
+print("\nHaciendo que el automóvil vuelva a volar...")
+auto_volador.vuela()
+auto_volador.mostrar_detalles()
