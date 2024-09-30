@@ -1,5 +1,7 @@
 from automovil import Automovil
+from automovilNormal import AutomovilNormal
 from automovilVolador import AutomovilVolador
+from abc import ABC, abstractmethod
 
 # Crear una instancia del automóvil
 mi_auto = Automovil("Rojo", "Toyota", 10, 120)
@@ -59,3 +61,18 @@ auto_volador.mostrar_detalles()
 print("\nHaciendo que el automóvil vuelva a volar...")
 auto_volador.vuela()
 auto_volador.mostrar_detalles()
+
+ # Crear una instancia de AutomovilNormal
+auto_normal = AutomovilNormal("Rojo", "Ferrari", 30, 150)
+
+# Mostrar las características del automóvil normal
+print("Características del automóvil normal:")
+auto_normal.mostrar_detalles()
+
+# Conducir el automóvil normal
+print("\nConduciendo el automóvil normal:")
+auto_normal.conducir()
+
+# Conducir el automóvil volador
+print("\nConduciendo el automóvil volador:")
+auto_volador.conducir()

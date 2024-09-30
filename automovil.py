@@ -1,3 +1,5 @@
+from abc import ABC, abstractmethod
+
 class Automovil:
     # Atributo de clase ruedas, por defecto inicializado en 4
     ruedas = 4
@@ -32,3 +34,7 @@ class Automovil:
         if self.velocidad < 0:
             self.velocidad = 0  # La velocidad no puede ser negativa
         print(f"Velocidad reducida a: {self.velocidad}")
+
+    @abstractmethod
+    def conducir(self):
+        pass  # Método abstracto para que las clases derivadas lo implementen

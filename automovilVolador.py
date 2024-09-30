@@ -1,4 +1,5 @@
 from automovil import Automovil
+from abc import ABC, abstractmethod
 
 # Clase AutomovilVolador que hereda de Automovil
 class AutomovilVolador(Automovil):
@@ -28,3 +29,6 @@ class AutomovilVolador(Automovil):
             print("El automóvil ha aterrizado.")
         else:
             print("El automóvil ya está en tierra.")
+
+    def conducir(self):
+        print("Conduciendo en el aire 🚀.")
