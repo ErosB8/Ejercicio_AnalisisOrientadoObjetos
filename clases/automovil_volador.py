@@ -1,4 +1,5 @@
-from automovil import Automovil
+''' 
+from clases.vehiculo import Automovil
 from abc import ABC, abstractmethod
 
 # Clase AutomovilVolador que hereda de Automovil
@@ -32,3 +33,33 @@ class AutomovilVolador(Automovil):
 
     def conducir(self):
         print("Conduciendo en el aire 🚀.")
+'''
+
+from clases.automovil import Automovil
+
+class AutomovilVolador(Automovil):
+    ruedas = 6
+
+    def __init__(self, año, modelo, marca, velocidad=0, esta_volando=False):
+        super().__init__(año, modelo, marca, velocidad)
+        self.esta_volando = esta_volando
+
+    def volar(self):
+        if not self.esta_volando:
+            self.esta_volando = True
+            print(f"El {self.marca} está volando.")
+        else:
+            print(f"El {self.marca} ya está en el aire.")
+
+    def aterrizar(self):
+        if self.esta_volando:
+            self.esta_volando = False
+            print(f"El {self.marca} ha aterrizado.")
+        else:
+            print(f"El {self.marca} ya está en tierra.")
+
+    def conducir(self):
+        if self.esta_volando:
+            print(f"El {self.marca} está volando y no puede conducir en tierra.")
+        else:
+            super().conducir()

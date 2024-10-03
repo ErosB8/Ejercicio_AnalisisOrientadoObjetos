@@ -1,3 +1,4 @@
+'''
 from automovil import Automovil
 from automovilNormal import AutomovilNormal
 from automovilVolador import AutomovilVolador
@@ -81,3 +82,23 @@ auto_volador.conducir()
 num1 = 5
 num2 = 3
 mostrar_suma(num1, num2)
+'''
+
+from clases.automovil_volador import AutomovilVolador
+
+if __name__ == "__main__":
+    auto_volador = AutomovilVolador(2024, "X-Wing", "Tesla", 300)
+    print(f"Año: {auto_volador.get_año()}")
+    print(f"Modelo: {auto_volador.get_modelo()}")
+    print(f"Marca: {auto_volador.marca}")
+
+    # Conducir y volar
+    auto_volador.conducir()
+    auto_volador.volar()
+
+    # Intentar conducir mientras vuela
+    auto_volador.conducir()
+
+    # Aterrizar y conducir nuevamente
+    auto_volador.aterrizar()
+    auto_volador.conducir()

@@ -1,3 +1,4 @@
+''' 
 from abc import ABC, abstractmethod
 
 class Automovil:
@@ -38,3 +39,21 @@ class Automovil:
     @abstractmethod
     def conducir(self):
         pass  # Método abstracto para que las clases derivadas lo implementen
+'''
+
+class Vehiculo:
+    def __init__(self, año, modelo):
+        self._año = año
+        self.__modelo = modelo
+
+    def get_año(self):
+        return self._año
+
+    def set_año(self, año):
+        self._año = año
+
+    def get_modelo(self):
+        return self.__modelo
+
+    def set_modelo(self, modelo):
+        self.__modelo = modelo
