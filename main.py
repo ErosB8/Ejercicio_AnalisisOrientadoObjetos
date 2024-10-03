@@ -2,6 +2,7 @@ from automovil import Automovil
 from automovilNormal import AutomovilNormal
 from automovilVolador import AutomovilVolador
 from abc import ABC, abstractmethod
+from suma.mostrarsuma import mostrar_suma
 
 # Crear una instancia del automóvil
 mi_auto = Automovil("Rojo", "Toyota", 10, 120)
@@ -76,3 +77,7 @@ auto_normal.conducir()
 # Conducir el automóvil volador
 print("\nConduciendo el automóvil volador:")
 auto_volador.conducir()
+
+num1 = 5
+num2 = 3
+mostrar_suma(num1, num2)
