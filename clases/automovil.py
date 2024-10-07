@@ -27,3 +27,5 @@ class Automovil(Vehiculo):
 
     def conducir(self):
         print(f"Conduciendo por tierra a {self.velocidad} km/h")
+
+    

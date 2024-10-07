@@ -84,6 +84,7 @@ num2 = 3
 mostrar_suma(num1, num2)
 '''
 
+'''
 from clases.automovil_volador import AutomovilVolador
 
 if __name__ == "__main__":
@@ -102,3 +103,63 @@ if __name__ == "__main__":
     # Aterrizar y conducir nuevamente
     auto_volador.aterrizar()
     auto_volador.conducir()
+    '''
+
+from clases.automovil_volador import AutomovilVolador
+from clases.automovil import Automovil
+import sqlite3
+import os
+
+def obtener_datos_vehiculo(vehiculo):
+    return vehiculo.Datos()
+
+if __name__ == "__main__":
+    # Crear instancias
+    automovil_normal = Automovil(2022, "Modelo T", "Ford", 120)
+    automovil_volador = AutomovilVolador(2024, "X-Wing", "Tesla", 300)
+
+# Obtener y mostrar datos
+print(obtener_datos_vehiculo(automovil_normal))  # Muestra datos del automóvil normal
+print(obtener_datos_vehiculo(automovil_volador)) # Muestra datos del automóvil volador
+
+
+'''
+# Crear una carpeta base_datos si no existe
+if not os.path.exists("base_datos"):
+    os.makedirs("base_datos")
+    '''
+
+# Conectar o crear la base de datos en la carpeta base_datos
+conn = sqlite3.connect("base_datos/mi_bd.db")
+cursor = conn.cursor()
+
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS vehiculo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    anio INTEGER,
+    modelo TEXT,
+    marca TEXT,
+    velocidad REAL
+)
+''')
+conn.commit()
+
+# Insertar un vehículo en la tabla
+cursor.execute('''
+INSERT INTO vehiculo (anio, modelo, marca, velocidad)
+VALUES (?, ?, ?, ?)
+''', (2022, "Modelo CyberTruck", "Tesla", 150.0))
+
+conn.commit()
+
+# Leer todos los vehículos de la base de datos
+cursor.execute("SELECT * FROM vehiculo")
+vehiculos = cursor.fetchall()
+
+# Mostrar los vehículos
+for vehiculo in vehiculos:
+    print(f"ID: {vehiculo[0]}, Año: {vehiculo[1]}, Modelo: {vehiculo[2]}, Marca: {vehiculo[3]}, Velocidad: {vehiculo[4]}")
+
+# Cerrar la conexión
+conn.close()
+

@@ -57,3 +57,6 @@ class Vehiculo:
 
     def set_modelo(self, modelo):
         self.__modelo = modelo
+
+    def Datos(self):
+        return f"Automovil de {self.ruedas} ruedas"
